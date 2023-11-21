@@ -37,5 +37,8 @@ Isso derrubará o container do MongoDB.# A4_BD_Massivos
 
 ![image](https://github.com/natansr/A4_BD_Massivos/assets/4833993/bedd7074-f1f2-4cdc-9850-851938866bc5)
 
+![image](https://github.com/natansr/A4_BD_Massivos/assets/4833993/c5f5a888-edc5-4171-8e63-ee5c31ad1f6d)
+
+
 
 
