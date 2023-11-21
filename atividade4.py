@@ -1,6 +1,9 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
+from bson.objectid import ObjectId
+import pandas as pd
+
 # Conectando ao servidor MongoDB (executado via Docker Compose)
 client = MongoClient('localhost', 27017, username='root', password='example')
 
@@ -45,9 +48,39 @@ alunos_list = [
 # Inserindo os alunos em um único comando
 alunos.insert_many(alunos_list)
 
-# Buscando alunos específicos
+
+
+
+##################PARTE DE IMPORTACAO DO CSV
+
+
+# Importando de fontes externas (CSV)
+# Lendo o arquivo CSV usando pandas
+df = pd.read_csv('csv/seu_arquivo.csv')
+
+# Convertendo os dados do DataFrame para uma lista de dicionários
+alunos_csv = df.to_dict(orient='records')
+
+# Inserindo os alunos do CSV no banco de dados
+alunos.insert_many(alunos_csv)
+
+
+
+
+
+# Buscando alunos específicos - 1
 print("\nBuscando aluno com nome 'Paulo':")
 print(alunos.find_one({'nome': 'Paulo'}))
+
+# Buscando alunos específicos - 2
+print("\nBuscando aluno com nome 'LukeSkywalker':")
+print(alunos.find_one({'nome': 'LukeSkywalker'}))
+
+
+# Buscando alunos específicos
+print("\nBuscando aluno com nome '':")
+print(alunos.find_one({'nome': 'Paulo'}))
+
 
 print("\nBuscando alunos bolsistas:")
 for aluno in alunos.find({'bolsista': True}):
@@ -56,6 +89,9 @@ for aluno in alunos.find({'bolsista': True}):
 print("\nBuscando alunos não bolsistas:")
 for aluno in alunos.find({'bolsista': False}):
     print(aluno)
+
+
+
 
 # Atualizando documentos
 alunos.update_many({}, {'$set': {'mensalidade': 0}})
@@ -72,8 +108,6 @@ alunos.update_many({}, {'$set': {'cidade': ''}})
 alunos.delete_one({'_id': ObjectId('5af58b15c369ce419987ca03')})
 
 
-# Importando de fontes externas (CSV)
-# ... Adicione o código para importar dados do CSV aqui
 
 
 
@@ -92,6 +126,10 @@ pipeline = [
 result = list(alunos.aggregate(pipeline))
 print("\nTotal de mensalidades dos bolsistas:")
 print(result)
+
+
+
+
 
 
 
