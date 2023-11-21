@@ -28,3 +28,9 @@ python atividade4.py
 docker-compose down
 
 ## Isso derrubará o container do MongoDB.# A4_BD_Massivos
+
+
+
+Primeiro print de execução: 
+
+![image](https://github.com/natansr/A4_BD_Massivos/assets/4833993/d61e9935-b659-42f5-bac8-e2d7b1784770)
