@@ -2,6 +2,8 @@
 
 ## Pré-requisitos
 - Docker instalado
+- Python3 instalado
+
 
 ## Passos para Execução
 1. Clone este repositório.
