@@ -2,7 +2,6 @@
 
 ## Pré-requisitos
 - Docker instalado
-- Python3 instalado.
 
 ## Passos para Execução
 1. Clone este repositório.
@@ -12,8 +11,10 @@
 
     docker-compose up -d
 
-Isso iniciará o container do MongoDB.
+## Isso iniciará o container do MongoDB.
 
+
+## Dependências
 5. Instale as dependências Python:
 
     pip install -r requirements.txt
@@ -29,10 +30,4 @@ python atividade4.py
 
 docker-compose down
 
-Isso derrubará o container do MongoDB.# A4_BD_Massivos
-
-
-
-##Primeiro print de execução (falta implementar o CSV): 
-
-![image](https://github.com/natansr/A4_BD_Massivos/assets/4833993/d61e9935-b659-42f5-bac8-e2d7b1784770)
+## Isso derrubará o container do MongoDB.

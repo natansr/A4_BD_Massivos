@@ -56,7 +56,7 @@ alunos.insert_many(alunos_list)
 
 # Importando de fontes externas (CSV)
 # Lendo o arquivo CSV usando pandas
-df = pd.read_csv('csv/seu_arquivo.csv')
+df = pd.read_csv('csv/aluno.csv')
 
 # Convertendo os dados do DataFrame para uma lista de dicionários
 alunos_csv = df.to_dict(orient='records')
